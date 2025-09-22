@@ -7,5 +7,6 @@
       ./ssh.nix
       ./fish.nix
       ./fonts.nix
+      ./gaming.nix
     ];
 }

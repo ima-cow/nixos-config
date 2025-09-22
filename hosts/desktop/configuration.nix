@@ -102,6 +102,13 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  gaming.enable = true;
+  
+  mangohud = {
+    enable = true;
+    fps-limit = 170;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -111,7 +118,8 @@
     vim
     spotify
     godot
-#  wget
+    protonplus
+    wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

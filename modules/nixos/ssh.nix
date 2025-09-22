@@ -1,10 +1,8 @@
 { lib, config, pkgs, ... }:
 
 {
-  options = {
-    ssh.enable
-      = lib.mkEnableOption "enable user modual";
-  };
+  options.ssh.enable
+    = lib.mkEnableOption "enable user modual";
 
   config = lib.mkIf config.ssh.enable {
     services.openssh =  {

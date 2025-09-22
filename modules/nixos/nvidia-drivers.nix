@@ -1,10 +1,8 @@
 { config, lib, pkgs, ... }:
 
 {
-  options = {
-    nvidia-drivers.enable
+  options.nvidia-drivers.enable
       = lib.mkEnableOption "enable user module";
-  };
 
   config = lib.mkIf config.nvidia-drivers.enable {
     # Enable OpenGL
