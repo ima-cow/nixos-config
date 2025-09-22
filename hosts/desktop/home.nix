@@ -55,6 +55,10 @@
     key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF8QEULcEEp6/t+tdcYCYsQc6Sm4Qpatl1ODnQvQMD6K";
   };
 
+  enhanced-terminal = {
+    enable = true;
+  };
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.

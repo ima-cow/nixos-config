@@ -125,6 +125,7 @@
   # List services that you want to enable:
 
   ssh.enable = true;
+  fonts.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
