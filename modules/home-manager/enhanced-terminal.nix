@@ -4,7 +4,7 @@ let
   cfg = config.enhanced-terminal;
 in
 {
-  options.enhance-terminal= {
+  options.enhanced-terminal= {
     enable 
       = lib.mkEnableOption "enable user module";
 
