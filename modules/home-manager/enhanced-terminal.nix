@@ -8,10 +8,13 @@ in
     enable 
       = lib.mkEnableOption "enable user module";
 
-    font  = lib.mkOption {
+    font = lib.mkOption {
       default = "Hack Nerd Font";
     };
 
+    starship-preset-url = lib.mkOption {
+      default = "https://starship.rs/presets/toml/gruvbox-rainbow.toml";
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -29,6 +32,7 @@ in
       enable = true;
       enableFishIntegration = true;
       enableInteractive = true;
+      settings = lib.importTOML builtins.fetchurl cfg.starship-preset-url;
     };
 
     programs.zoxide = {
