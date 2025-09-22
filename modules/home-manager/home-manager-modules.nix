@@ -3,7 +3,8 @@
 {
   imports = 
     [
-      ./git.nix 
+      ./git.nix
+      ./enhanced-terminal.nix
     ];
 }
 

@@ -5,6 +5,7 @@
     [
       ./nvidia-drivers.nix
       ./ssh.nix
+      ./fish.nix
+      ./fonts.nix
     ];
 }
-

@@ -86,7 +86,10 @@
       kdePackages.kate
     #  thunderbird
     ];
+    useDefaultShell = true;
   };
+
+  fish.enable = true;
 
   # Enable home maneger
   home-manager = {
