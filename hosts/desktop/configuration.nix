@@ -103,11 +103,6 @@
   programs.firefox.enable = true;
 
   gaming.enable = true;
-  
-  mangohud = {
-    enable = true;
-    fps-limit = 170;
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
