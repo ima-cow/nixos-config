@@ -15,11 +15,16 @@ in
     fps-limit = lib.mkOption {
       default = 60;
     };
+
+    session-wide = lib.mkOption {
+      default = false;
+    };
   };
 
   config = lib.mkIf cfg.enable {
     programs.mangohud = {
       enable = true;
+      enableSessionWide = cfg.session-wide;
       settings = {
         fps_limit = cfg.fps-limit;
         preset = cfg.preset;

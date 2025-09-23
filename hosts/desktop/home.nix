@@ -66,6 +66,7 @@
   mangohud = {
     enable = true;
     fps-limit = 170;
+    session-wide = false;
   };
 
   # This value determines the Home Manager release that your configuration is

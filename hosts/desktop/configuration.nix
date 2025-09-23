@@ -108,7 +108,7 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  gaming.enable = true;
+  gaming.enable = false;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
