@@ -18,6 +18,12 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  fileSystems."/mnt/secondary" =
+  { 
+    device = "/dev/disk/by-uuid/906e4ae0-92e9-45c8-b19f-cac2b1038f5c";
+    fsType = "btrfs";
+  };
+
   networking.hostName = "desktop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
