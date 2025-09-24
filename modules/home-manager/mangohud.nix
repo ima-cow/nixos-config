@@ -28,6 +28,7 @@ in
       settings = {
         fps_limit = cfg.fps-limit;
         preset = cfg.preset;
+        position = "top-right"; 
       };
     };
   };
