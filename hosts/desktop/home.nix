@@ -66,7 +66,7 @@
   mangohud = {
     enable = true;
     fps-limit = 170;
-    preset = 2;
+    preset = 1;
     session-wide = false;
   };
 

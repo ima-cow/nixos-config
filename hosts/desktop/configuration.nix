@@ -24,18 +24,14 @@
     fsType = "btrfs";
   };
 
-  networking.hostName = "desktop"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.hostName = "desktop";
 
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "America/New_York";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -64,13 +60,10 @@
     variant = "";
   };
 
-  # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable bluetooth
   hardware.bluetooth.enable = true;
 
-  # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -80,7 +73,6 @@
     pulse.enable = true;
   };
 
-  # Enable Nvidia drivers
   nvidia-drivers.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -90,14 +82,12 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
     ];
     useDefaultShell = true;
   };
 
   fish.enable = true;
 
-  # Enable home maneger
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = { 
@@ -121,6 +111,7 @@
     godot
     protonplus
     wget
+    chromium
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
