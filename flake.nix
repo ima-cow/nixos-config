@@ -8,6 +8,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+
+    nvf.url = "github:notashelf/nvf";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -16,6 +20,7 @@
       modules = [
         ./hosts/desktop/configuration.nix
         inputs.home-manager.nixosModules.default
+        inputs.nvf.nixosModules.default
       ];
     };
   };

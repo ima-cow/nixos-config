@@ -8,7 +8,7 @@
     [
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      ../../modules/nixos/nixos-modules.nix
+      ../../modules/nixos/modules.nix
     ];
 
   # Bootloader.
