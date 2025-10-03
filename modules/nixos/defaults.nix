@@ -1,6 +1,8 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
+  imports = ./modules.nix;
+
   options.defaults.enable 
     = lib.mkEnableOption "enable user module";
 
@@ -62,14 +64,6 @@
 
     stylix-config = {
       enable = true;
-    };
-
-    home-manager = {
-      extraSpecialArgs = { inherit inputs; };
-      users = { 
-        "ethank" = import ./home.nix;
-      };
-      backupFileExtension = "backup";
     };
 
     programs.firefox.enable = true;

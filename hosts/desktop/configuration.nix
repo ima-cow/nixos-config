@@ -4,8 +4,8 @@
   imports =
     [
       ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
       ../../modules/nixos/modules.nix
+      inputs.home-manager.nixosModules.default
     ];
 
   defaults.enable = true;
@@ -22,6 +22,14 @@
   services.desktopManager.plasma6.enable = true;
 
   nvidia-drivers.enable = true;
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = { 
+      "ethank" = import ./home.nix;
+    };
+    backupFileExtension = "backup";
+  };
    
   # DO NOT CHANGE
   system.stateVersion = "25.05"; 
