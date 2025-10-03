@@ -10,5 +10,6 @@
       ./gaming.nix
       ./nvf.nix
       ./stylix.nix
+      ./defaults.nix
     ];
 }
