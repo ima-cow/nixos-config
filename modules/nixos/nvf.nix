@@ -13,11 +13,16 @@
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;
 
-        languages = {
-          enableLSP = true;
-          enableTreesitter = true;
+        lsp.enable = true;
 
-          nix.enable;
+        languages = {
+          enableTreesitter = true;
+          nix = {
+            format = {
+              enable = true;
+              type = "nixfmt";
+            };
+          };
         };
       };
     };

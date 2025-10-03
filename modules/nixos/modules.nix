@@ -8,5 +8,6 @@
       ./fish.nix
       ./fonts.nix
       ./gaming.nix
+      ./nvf.nix
     ];
 }

@@ -100,6 +100,8 @@
 
   gaming.enable = true;
 
+  nvf.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
