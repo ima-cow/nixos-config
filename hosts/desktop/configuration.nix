@@ -88,6 +88,10 @@
 
   fish.enable = true;
 
+  stylix-config = {
+    enable = true;
+  };
+
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = { 

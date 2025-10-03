@@ -1,11 +1,11 @@
 { lib, config, pkgs, ... }:
 
 let 
-  cfg = config.stylix;
+  cfg = config.stylix-config;
 in
 {
-  options.stylix = {
-    enable 
+  options.stylix-config = {
+    enable
       = lib.mkEnableOption "enable user module";
 
     theme = {
@@ -22,10 +22,10 @@ in
     stylix = {
       enable = true;
 
-      base16Scheme = lib.mkIf cfg.theme.enable lib.concatStrings ["${pkgs.base16-schemes}/share/themes/" cfg.theme.scheme ".yaml"]
+      base16Scheme = lib.mkIf cfg.theme.enable lib.concatStrings ["${pkgs.base16-schemes}/share/themes/" cfg.theme.scheme ".yaml"];
       polarity = "dark";
 
-      image = ../../other/wallpaper.jpg
+      image = ../../other/wallpaper.jpg;
     };
   };
 }

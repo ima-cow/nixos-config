@@ -9,5 +9,6 @@
       ./fonts.nix
       ./gaming.nix
       ./nvf.nix
+      ./stylix.nix
     ];
 }
