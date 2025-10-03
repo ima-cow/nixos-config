@@ -97,6 +97,7 @@
     users = { 
       "ethank" = import ./home.nix;
     };
+    backupFileExtension = "backup";
   };
 
   # Install firefox.

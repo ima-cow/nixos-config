@@ -22,7 +22,8 @@ in
     stylix = {
       enable = true;
 
-      base16Scheme = lib.mkIf cfg.theme.enable lib.concatStrings ["${pkgs.base16-schemes}/share/themes/" cfg.theme.scheme ".yaml"];
+      base16Scheme = lib.mkIf cfg.theme.enable 
+        "${pkgs.base16-schemes}/share/themes/${cfg.theme.scheme}.yaml";
       polarity = "dark";
 
       image = ../../other/wallpaper.jpg;
