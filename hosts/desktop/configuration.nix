@@ -19,9 +19,6 @@
 
   networking.hostName = "desktop";
 
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
   nvidia-drivers.enable = true;
 
   home-manager = {
