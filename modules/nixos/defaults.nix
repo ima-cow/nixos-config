@@ -69,6 +69,8 @@
       enable = true;
     };
 
+    services.displayManager.sddm.autoNumlock = true;
+
     programs.firefox.enable = true;
 
     gaming.enable = true;
