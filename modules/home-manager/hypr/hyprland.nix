@@ -57,12 +57,11 @@
       "exec-once" = [
       #   "$terminal"
       #   "nm-applet &"
-        "waybar"
-      #   "hyprpaper & firefox"
+        "waybar & hyprpaper"
       ];
 
 
-      #############################
+      ############################# 
       ### ENVIRONMENT VARIABLES ###
       #############################
 

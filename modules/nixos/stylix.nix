@@ -27,6 +27,14 @@ in
       polarity = "dark";
 
       image = ../../other/wallpaper.jpg;
+
+      cursor = {
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Classic";
+        size = 1;
+      };
+
+      opacity.terminal = 0.8;
     };
   };
 }
