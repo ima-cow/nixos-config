@@ -6,7 +6,8 @@
       ./git.nix
       ./enhanced-terminal.nix
       ./mangohud.nix
-      ./hyprland.nix
+      ./hypr/hyprland.nix
+      ./hypr/waybar.nix
     ];
 }
 
