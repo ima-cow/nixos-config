@@ -5,10 +5,11 @@
     [
       ./hardware-configuration.nix
       ../../modules/nixos/modules.nix
-      inputs.home-manager.nixosModules.default
+      inputs.home-manager.nixosModules.default 
+      ../../modules/nixos/defaults.nix
     ];
 
-  defaults.enable = true;
+  nixos-defaults.enable = true;
 
   fileSystems."/mnt/secondary" =
   { 

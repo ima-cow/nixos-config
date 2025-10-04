@@ -1,12 +1,12 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
-  imports = ./modules.nix;
+  imports = [./modules.nix];
 
-  options.defaults.enable 
+  options.nixos-defaults.enable 
     = lib.mkEnableOption "enable user module";
 
-  config = lib.mkIf config.defaults.enable {
+  config = lib.mkIf config.nixos-defaults.enable {
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
     boot.loader.systemd-boot.enable = true;
@@ -38,6 +38,9 @@
       layout = "us";
       variant = "";
     };
+
+    programs.hyprland.enable = true;
+    programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
     services.printing.enable = true;
 

@@ -100,9 +100,6 @@
 
         border_size = 2;
 
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
-
         # Set to true enable resizing windows by clicking and dragging on borders and gaps
         resize_on_border = false;
 
@@ -125,7 +122,6 @@
           enabled = true;
           range = 4;
           render_power = 3;
-          color = "rgba(1a1a1aee)";
         };
 
         # https://wiki.hypr.land/Configuring/Variables/#blur
@@ -197,13 +193,6 @@
       master = {
         new_status = "master";
       };
-
-      # https://wiki.hypr.land/Configuring/Variables/#misc
-      misc = {
-        force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo = false; # If true disables the random hyprland logo / anime girl background. :(
-      };
-
 
       #############
       ### INPUT ###
