@@ -10,6 +10,7 @@
       nerd-fonts.hack
       nerd-fonts.agave
       nerd-fonts.gohufont
+      font-awesome
     ];
   };
 }

@@ -1,6 +1,8 @@
 { pkgs, lib, config, ... }:
 
 {
+  programs.wofi.enable = true;
+
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -26,8 +28,11 @@
       ################
 
       # See https://wiki.hypr.land/Configuring/Monitors/
-      monitor = ",preferred,auto,2";
+      monitor = ",preferred,auto,1.333334";
 
+      xwayland = {
+        force_zero_scaling = true;
+      };
 
       ###################
       ### MY PROGRAMS ###
@@ -37,7 +42,7 @@
 
       # Set programs that you use
 
-      "$terminal" = "ghosty";
+      "$terminal" = "ghostty";
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
 
@@ -49,11 +54,12 @@
       # Autostart necessary processes (like notifications daemons, status bars, etc.)
       # Or execute your favorite apps at launch like this:
 
-      # "exec-once" = [
+      "exec-once" = [
       #   "$terminal"
       #   "nm-applet &"
-      #   "waybar & hyprpaper & firefox"
-      # ];
+        "waybar"
+      #   "hyprpaper & firefox"
+      ];
 
 
       #############################
@@ -213,11 +219,6 @@
         touchpad = {
             natural_scroll = false;
         };
-      };
-
-      # https://wiki.hypr.land/Configuring/Variables/#gestures
-      gestures = {
-        workspace_swipe = false;
       };
 
       # Example per-device config

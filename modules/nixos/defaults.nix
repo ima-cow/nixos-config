@@ -85,6 +85,7 @@
       wget
       chromium
       aseprite
+      kdePackages.dolphin
     ];
 
     ssh.enable = true;
