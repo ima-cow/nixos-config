@@ -12,6 +12,11 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
+    services.displayManager.sddm = {
+      enable = true;
+      autoNumlock = true;
+    };
+
     nix.settings.experimental-features = [ "nix-command" "flakes"];
 
     networking.networkmanager.enable = true;
@@ -39,8 +44,11 @@
       variant = "";
     };
 
-    programs.hyprland.enable = true;
-    programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+    programs.hyprland = {
+      enable = true;
+      withUWSM  = false;
+      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+    };
 
     services.printing.enable = true;
 
@@ -69,8 +77,6 @@
       enable = true;
     };
 
-    services.displayManager.sddm.autoNumlock = true;
-
     programs.firefox.enable = true;
 
     gaming.enable = true;
@@ -88,6 +94,9 @@
       chromium
       aseprite
       kdePackages.dolphin
+      kdePackages.gwenview
+      prismlauncher
+      cliphist
     ];
 
     ssh.enable = true;
