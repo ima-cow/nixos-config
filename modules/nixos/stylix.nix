@@ -14,8 +14,13 @@ in
 
       scheme = lib.mkOption {
         default = "tomorrow-night";
-      };
+      };      
     }; 
+
+    wallpaper = lib.mkOption {
+        default = ../../other/wallpapers/wallpaper.jpg;
+    };
+
   };
 
   config = lib.mkIf cfg.enable {
@@ -26,7 +31,7 @@ in
         "${pkgs.base16-schemes}/share/themes/${cfg.theme.scheme}.yaml";
       polarity = "dark";
 
-      image = ../../other/wallpaper.jpg;
+      image = cfg.wallpaper;
 
       cursor = {
         package = pkgs.bibata-cursors;
