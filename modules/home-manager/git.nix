@@ -38,6 +38,7 @@ in
         safe.directory = "/etc/nixos";
         advice.defaultBranchName = "false";
         push.autoSetupRemote = "true";
+        pull.rebase = "false";
       };
     };
   };
