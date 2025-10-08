@@ -8,6 +8,7 @@
       ./mangohud.nix
       ./hypr/hyprland.nix
       ./hypr/waybar.nix
+      ./hypr/hyprlock.nix
     ];
 }
 

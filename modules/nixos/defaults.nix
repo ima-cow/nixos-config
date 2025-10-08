@@ -105,7 +105,6 @@
       hyprpolkitagent
       swaynotificationcenter
       hyprshot
-      hypridle
     ];
 
     ssh.enable = true;
