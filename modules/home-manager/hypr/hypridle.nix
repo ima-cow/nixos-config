@@ -1,5 +1,8 @@
 { lib, config, pkgs, ...}:
 
+let
+  cfg = config.hypridle;
+in
 {
   options.hypridle =  {
     enable = lib.mkEnableOption "enable user module";
@@ -7,17 +10,21 @@
     timeout-off = lib.mkOption {
       default = "suspend";
     };
+
+    keyboard-backlight = lib.mkOption {
+      default = "rgb:kbd_backlight";
+    };
   };
 
-  config = lib.mkIf config.hypridle.enable {
+  config = lib.mkIf cfg.enable {
     programs.hypridle = {
       enable = true;
 
       listener = [
         {
           timeout = 150;
-          on-timeout = "brightnessctl -sd rgb:kbd_backlight set 0";
-          on-resume = "brightnessctl -rd rgb:kbd_backlight";
+          on-timeout = "brightnessctl -sd ${cfg.keyboard-backlight} set 0";
+          on-resume = "brightnessctl -rd ${cfg.keyboard-backlight}";
         }
         {
           timeout = 300;
@@ -30,7 +37,7 @@
         }
         {
           timeout = 1800;
-          on-timeout = "systemctl suspend";
+          on-timeout = "systemctl ${cfg.timeout-off}";
         }
       ];
     };
