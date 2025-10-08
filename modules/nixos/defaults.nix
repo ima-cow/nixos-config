@@ -99,13 +99,13 @@
       kdePackages.gwenview
       prismlauncher
       cliphist
-      go
       wl-clipboard
       xdg-utils
       vesktop
       hyprpolkitagent
       swaynotificationcenter
       hyprshot
+      hypridle
     ];
 
     ssh.enable = true;
