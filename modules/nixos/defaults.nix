@@ -12,6 +12,8 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
+    hardware.i2c.enable = true;
+
     services.displayManager = {
       sddm = {
         enable = true;
@@ -115,6 +117,7 @@
       hyprpolkitagent
       swaynotificationcenter
       hyprshot
+      ddcutil
     ];
 
     ssh.enable = true;

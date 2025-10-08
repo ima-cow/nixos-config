@@ -56,7 +56,8 @@
       # Or execute your favorite apps at launch like this:
 
       "exec-once" = [
-        "waybar & hyprpaper"
+        "waybar & hyprpaper & hypridle"
+        "hyprlock || hyprctl dispatch exit"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "systemctl --user start hyprpolkitagent"
