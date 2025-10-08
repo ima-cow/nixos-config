@@ -23,6 +23,11 @@ in
       listener = [
         {
           timeout = 150;
+          on-timeout = "brightnessctl -s set 10";
+          on-resume = "brightnessctl -r";
+        }
+        {
+          timeout = 150;
           on-timeout = "brightnessctl -sd ${cfg.keyboard-backlight} set 0";
           on-resume = "brightnessctl -rd ${cfg.keyboard-backlight}";
         }
