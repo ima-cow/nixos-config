@@ -12,9 +12,19 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    services.displayManager.sddm = {
-      enable = true;
-      autoNumlock = true;
+    services.displayManager = {
+      sddm = {
+        enable = true;
+        autoNumlock = true;
+        autoLogin.relogin = true;
+      };
+
+      autoLogin = {
+        enable = true;
+        user = "ethank";
+      };
+
+      defaultSession = "hyprland";
     };
 
     nix.settings.experimental-features = [ "nix-command" "flakes"];
