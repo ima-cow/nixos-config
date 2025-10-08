@@ -1,8 +1,13 @@
 { lib, config, pkgs, ...}:
 
 {
-  options.hypridle = enable
-    = lib.mkEnableOption "enable user module";
+  options.hypridle =  {
+    enable = lib.mkEnableOption "enable user module";
+
+    timeout-off = lib.mkOption {
+      default = "suspend";
+    };
+  };
 
   config = lib.mkIf config.hypridle.enable {
     programs.hypridle = {
