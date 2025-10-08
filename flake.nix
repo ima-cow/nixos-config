@@ -19,15 +19,27 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./hosts/desktop/configuration.nix
-        inputs.home-manager.nixosModules.default
-        inputs.nvf.nixosModules.default
-        inputs.stylix.nixosModules.stylix
-      ];
+  outputs = { self, nixpkgs, ... }@inputs: let
+    baseModules = [
+      inputs.home-manager.nixosModules.default
+      inputs.nvf.nixosModules.default
+      inputs.stylix.nixosModules.stylix
+    ];
+  in {
+    nixosConfigurations = {
+      desktop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = baseModules ++ [
+          ./hosts/desktop/configuration.nix
+        ];
+      };
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = baseModules ++ [
+          ./hosts/laptop/configuration.nix
+        ];
+      };
+
     };
   };
 }
