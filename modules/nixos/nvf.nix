@@ -13,16 +13,19 @@
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;
 
-        lsp.enable = true;
+        options = {
+          expandtab = true;
+          smartindent = true;
+          tabstop = 2;
+          shiftwidth = 2;
+        };
 
+        lsp.enable = true;
         languages = {
           enableTreesitter = true;
+          enableFormat = true;
           nix = {
             enable = true;
-            format = {
-              enable = true;
-              type = "nixfmt";
-            };
           };
         };
       };

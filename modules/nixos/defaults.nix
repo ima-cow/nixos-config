@@ -111,6 +111,8 @@
     ssh.enable = true;
     fonts.enable = true;
 
+    services.playerctld.enable = true;
+
     nix.optimise.automatic = true;
     nix.gc = {
       automatic = true;
