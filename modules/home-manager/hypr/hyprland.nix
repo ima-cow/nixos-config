@@ -56,10 +56,10 @@
       # Or execute your favorite apps at launch like this:
 
       "exec-once" = [
-      #   "$terminal"
-      #   "nm-applet &"
         "waybar & hyprpaper"
-        "wl-paste --watch cliphist store"
+        "wl-paste --type text --watch cliphist store"
+        "wl-paste --type image --watch cliphist store"
+        "systemctl --user start hyprpolkitagent"
       ];
 
 
@@ -247,7 +247,10 @@
         "$mainMod, SPACE, exec, $menu"
         "$mainMod, P, pseudo," # dwindle
         "$mainMod, T, togglesplit," # dwindle
-        "$mainMod, V, exec, cliphist list | dmenu | cliphist decode | wl-copy"
+        "$mainMod, V, exec, cliphist list | wofi --dmenu --pre-display-cmd \"echo '%s' | cut -f 2\" | cliphist decode | wl-copy"
+        "$mainMod, PRINT, exec, hyprshot -o /home/ethank/Pictures/Screenshots -m window"
+        "$mainMod SHIFT, PRINT, exec, hyprshot -o /home/ethank/Pictures/Screenshots -m region"
+
 
         # Move focus with mainMod + arrow keys
         "$mainMod, H, movefocus, l"
@@ -328,6 +331,7 @@
 
         "tile, class:^(Godot)$"
         "tile, class:^(Fighting Game Adv Comp Sci)$"
+        "fullscreen, class:^(Minecraft 1.21.9)$"
 
         # Fix some dragging issues with XWayland
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"

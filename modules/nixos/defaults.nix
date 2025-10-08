@@ -61,6 +61,7 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      wireplumber.enable = true;
     };
 
     users.users.ethank = {
@@ -75,6 +76,7 @@
 
     stylix-config = {
       enable = true;
+      theme.enable = true;
     };
 
     programs.firefox.enable = true;
@@ -97,6 +99,13 @@
       kdePackages.gwenview
       prismlauncher
       cliphist
+      go
+      wl-clipboard
+      xdg-utils
+      vesktop
+      hyprpolkitagent
+      swaynotificationcenter
+      hyprshot
     ];
 
     ssh.enable = true;
