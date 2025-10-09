@@ -93,7 +93,8 @@
 
     stylix-config = {
       enable = true;
-      theme.enable = true;
+      theme.enable = false;
+      wallpaper = ../../other/wallpapers/wallpaper_1.jpg;
     };
 
     programs.firefox.enable = true;
@@ -123,6 +124,8 @@
       swaynotificationcenter
       hyprshot
       ddcutil
+      bluetui
+      impala
     ];
 
     ssh.enable = true;
