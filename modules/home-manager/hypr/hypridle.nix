@@ -25,16 +25,6 @@ in
 
         listener = [
           {
-            timeout = 10;
-            on-timeout = "echo \"timeout 1\" > ~/filename1.txt";
-            on-resume =  "echo \"resume 1\" > ~/filename2.txt";
-          }
-          {
-            timeout = 20;
-            on-timeout = "echo \"timeout 2\" > ~/filename3.txt";
-            on-resume =  "echo \"resume 2\" > ~/filename4.txt";
-          }
-          {
             timeout = 150;
             on-timeout = "ddcutil dumpvcp /home/ethank/.local/share/ddcutil/prvset.vcp && ddcutil setvcp 10 10";
             on-resume = "ddcutil loadvcp /home/ethank/.local/share/ddcutil/prvset.vcp";
