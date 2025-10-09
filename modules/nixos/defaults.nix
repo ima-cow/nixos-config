@@ -29,6 +29,11 @@
       defaultSession = "hyprland";
     };
 
+    services.logind.settings.Login = {
+      HandlePowerKey = "suspend";
+      HandlePowerKeyLongPress = "poweroff";
+    };
+
     nix.settings.experimental-features = [ "nix-command" "flakes"];
 
     networking.networkmanager.enable = true;
@@ -128,8 +133,16 @@
     nix.optimise.automatic = true;
     nix.gc = {
       automatic = true;
-      dates = "weekly";
+      dates = "Mon *-*-* 04:30:00";
       options = "--delete-older-than 30d";
+    };
+
+    system.autoUpgrade = {
+      enable = true;
+      flake = inputs.self.outPath;
+      allowReboot = true;
+      flags = [ "--update-input" "nixpkgs" "--commit-lock-file" ];
+      dates = "Mon *-*-* 04:00:00";
     };
   };
 }
