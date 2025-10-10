@@ -22,6 +22,8 @@
     brightness-restore = "brightnessctl -r";
   };
 
+  programs.hyprlock.settings.auth.fingerprint.enabled = true;
+
   home.stateVersion = "25.05";
   programs.home-manager.enable = true;
 }

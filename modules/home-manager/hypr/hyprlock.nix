@@ -30,6 +30,15 @@
           placeholder_text = "Password...";
           shadow_passes = 2;
         };
+
+        label = { 
+          text = "cmd[update:1000] echo \"$(date +\"%-I:%M\")\"";
+          position = "0, 100";
+          halign = "center";
+          valign = "center";
+          font_size = "110";
+          shadow_passes = 2;
+        };
       };
     };
   };

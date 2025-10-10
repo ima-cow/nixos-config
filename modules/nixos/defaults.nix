@@ -89,7 +89,6 @@
     stylix-config = {
       enable = true;
       theme.enable = false;
-      wallpaper = ../../other/wallpapers/wallpaper_1.jpg;
     };
 
     programs.firefox.enable = true;
@@ -129,6 +128,10 @@
     fonts.enable = true;
 
     services.playerctld.enable = true;
+
+    networking.wireless.iwd.enable = true;
+
+    services.fprintd.enable = true;
 
     nix.optimise.automatic = true;
     nix.gc = {

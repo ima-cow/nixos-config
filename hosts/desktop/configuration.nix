@@ -33,6 +33,8 @@
     };
     backupFileExtension = "backup";
   };
+
+  stylix-config.wallpaper = ../../other/wallpapers/wallpaper_1.jpg;
    
   # DO NOT CHANGE
   system.stateVersion = "25.05"; 

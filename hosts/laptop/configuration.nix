@@ -27,5 +27,9 @@
     backupFileExtension = "backup";
   };
 
+  services.fprintd.enable = true;
+
+  stylix-config.wallpaper = ../../other/wallpapers/wallpaper_2.jpg;
+
   system.stateVersion = "25.05";
 }
