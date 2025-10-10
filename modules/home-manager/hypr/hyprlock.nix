@@ -36,8 +36,8 @@
           position = "0, 100";
           halign = "center";
           valign = "center";
-          font_size = "110";
-          shadow_passes = 2;
+          font_size = "200";
+          shadow_passes = 3;
         };
       };
     };
