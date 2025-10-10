@@ -122,6 +122,7 @@
       bluetui
       impala
       brightnessctl
+      feh
     ];
 
     ssh.enable = true;
