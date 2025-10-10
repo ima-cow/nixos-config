@@ -6,7 +6,7 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       ../../modules/nixos/modules.nix
-      ../../modules/nixos/default.nix
+      ../../modules/nixos/defaults.nix
     ];
 
   nixos-defaults.enable = true;
