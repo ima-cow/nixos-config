@@ -10,6 +10,14 @@ in
     timeout-off = lib.mkOption {
       default = "suspend";
     };
+
+    brightness-down = lib.mkOption {
+      default = "ddcutil dumpvcp /home/ethank/.local/share/ddcutil/prvset.vcp && ddcutil setvcp 10 10";
+    };
+
+    brightness-restore = lib.mkOption {
+      default = "ddcutil loadvcp /home/ethank/.local/share/ddcutil/prvset.vcp";
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -26,8 +34,8 @@ in
         listener = [
           {
             timeout = 150;
-            on-timeout = "ddcutil dumpvcp /home/ethank/.local/share/ddcutil/prvset.vcp && ddcutil setvcp 10 10";
-            on-resume = "ddcutil loadvcp /home/ethank/.local/share/ddcutil/prvset.vcp";
+            on-timeout = cfg.brightness-down;
+            on-resume = cfg.brightness-restore;
           }
           {
             timeout = 300;

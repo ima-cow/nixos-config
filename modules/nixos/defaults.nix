@@ -29,11 +29,6 @@
       defaultSession = "hyprland";
     };
 
-    services.logind.settings.Login = {
-      HandlePowerKey = "suspend";
-      HandlePowerKeyLongPress = "poweroff";
-    };
-
     nix.settings.experimental-features = [ "nix-command" "flakes"];
 
     networking.networkmanager.enable = true;
@@ -126,6 +121,7 @@
       ddcutil
       bluetui
       impala
+      brightnessctl
     ];
 
     ssh.enable = true;

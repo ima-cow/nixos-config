@@ -21,6 +21,11 @@
 
   nvidia-drivers.enable = true;
 
+  services.logind.settings.Login = {
+    HandlePowerKey = "suspend";
+    HandlePowerKeyLongPress = "poweroff";
+  };
+
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = { 

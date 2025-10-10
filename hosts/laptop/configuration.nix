@@ -13,6 +13,12 @@
 
   networking.hostName = "laptop";
 
+  services.logind.settings.Login = {
+    HandlePowerKey = "hibernate";
+    HandlePowerKeyLongPress = "poweroff";
+    HandleLidSwitch = "suspend";
+  };
+
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
