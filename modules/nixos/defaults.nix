@@ -123,6 +123,7 @@
       brightnessctl
       feh
       nh
+      acpi
     ];
 
     ssh.enable = true;
