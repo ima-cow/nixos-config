@@ -124,6 +124,7 @@
       feh
       kdePackages.ark
       wlr-randr
+      nh
     ];
 
     ssh.enable = true;

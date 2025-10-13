@@ -20,6 +20,7 @@
   hypridle = {
     brightness-down = "brightnessctl -s set 10%";
     brightness-restore = "brightnessctl -r";
+    timeout-off = "suspend-then-hibernate";
   };
 
   programs.hyprlock.settings.auth.fingerprint.enabled = true;
