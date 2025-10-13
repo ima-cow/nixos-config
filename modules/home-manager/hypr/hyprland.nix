@@ -40,7 +40,7 @@ in
         ################
   
         # See https://wiki.hypr.land/Configuring/Monitors/
-        monitor = ",preferred,auto,${cfg.scale}";
+        monitor = ",2560x1440@144.000000Hz,auto,${cfg.scale}";
   
         xwayland = {
           force_zero_scaling = true;
@@ -343,7 +343,7 @@ in
   
           "tile, class:^(Godot)$"
           "tile, class:^(Fighting Game Adv Comp Sci)$"
-          "fullscreen, class:^(Minecraft 1.21.9)$"
+          "fullscreen, class:Minecraft.*"
   
           # Fix some dragging issues with XWayland
           "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
