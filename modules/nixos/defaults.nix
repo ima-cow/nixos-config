@@ -122,6 +122,7 @@
       impala
       brightnessctl
       feh
+      nh
     ];
 
     ssh.enable = true;
