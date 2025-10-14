@@ -122,6 +122,8 @@
       impala
       brightnessctl
       feh
+      kdePackages.ark
+      wlr-randr
       nh
       acpi
     ];
@@ -132,8 +134,6 @@
     services.playerctld.enable = true;
 
     networking.wireless.iwd.enable = true;
-
-    services.fprintd.enable = true;
 
     nix.optimise.automatic = true;
     nix.gc = {

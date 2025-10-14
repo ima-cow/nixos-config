@@ -59,6 +59,8 @@
       # EDITOR = "emacs";
     };
 
+    services.easyeffects.enable = true;
+
     git.enable = true;
 
     enhanced-terminal = {
