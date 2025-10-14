@@ -125,6 +125,7 @@
       kdePackages.ark
       wlr-randr
       nh
+      acpi
     ];
 
     ssh.enable = true;
