@@ -28,7 +28,8 @@ in
       settings = {
         fps_limit = cfg.fps-limit;
         preset = cfg.preset;
-        position = "top-right"; 
+        position = "top-right";
+        background_alpha = lib.mkForce 0.0;
       };
     };
   };

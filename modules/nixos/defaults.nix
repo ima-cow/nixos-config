@@ -126,6 +126,8 @@
       wlr-randr
       nh
       acpi
+      pwvucontrol
+      taskwarrior3
     ];
 
     ssh.enable = true;

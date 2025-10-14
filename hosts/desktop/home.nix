@@ -18,6 +18,13 @@
     session-wide = false;
   };
 
+  hypridle = {
+    brightness-down = "";
+    brightness-restore = "";
+    timeout-off = "";
+  };
+
+
   home.stateVersion = "25.05"; # DO NOT CHANGE
   programs.home-manager.enable = true;
 }
