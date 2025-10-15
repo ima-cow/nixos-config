@@ -131,13 +131,13 @@
             tooltip = false;
             format = "{icon} {}";
             format-icons = {
-              notification = "<span foreground='red'><sup></sup></span>";
+              notification = "";
               none = "";
-              dnd-notification = "<span foreground='red'><sup></sup></span>";
+              dnd-notification = "";
               dnd-none = "";
-              inhibited-notification = "<span foreground='red'><sup></sup></span>";
+              inhibited-notification = "";
               inhibited-none = "";
-              dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
+              dnd-inhibited-notification = "";
               dnd-inhibited-none = "";
             }; 
             return-type = "json";
@@ -231,7 +231,7 @@
             padding: 0px 10px;
             background: #${config.lib.stylix.colors.base04};
             color: #${config.lib.stylix.colors.base00};
-          }
+          }i
           #custom-startmenu {
             color: #${config.lib.stylix.colors.base02};
             padding: 0px 14px;

@@ -127,8 +127,9 @@
       nh
       acpi
       pwvucontrol
-      taskwarrior3
     ];
+
+    programs.kdeconnect.enable = false;
 
     ssh.enable = true;
     fonts.enable = true;
