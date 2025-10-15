@@ -56,7 +56,8 @@ in
   
         "$terminal" = "ghostty";
         "$fileManager" = "dolphin";
-        "$menu" = "wofi --show drun";
+        "$menu" = "pidof wofi || wofi --show drun";
+        "$browser" = "firefox";
   
   
         #################
@@ -258,10 +259,11 @@ in
           "$mainMod, F, togglefloating,"
           "$mainMod, SPACE, exec, $menu"
           "$mainMod, P, pseudo," # dwindle
-          "$mainMod, T, togglesplit," # dwindle
+          "$mainMod, S, togglesplit," # dwindle
           "$mainMod, V, exec, cliphist list | wofi --dmenu --pre-display-cmd \"echo '%s' | cut -f 2\" | cliphist decode | wl-copy"
           "$mainMod, PRINT, exec, hyprshot -o /home/ethank/Pictures/Screenshots -m window"
           "$mainMod SHIFT, PRINT, exec, hyprshot -o /home/ethank/Pictures/Screenshots -m region"
+          "$mainMod, T, exec, $browser"
   
   
           # Move focus with mainMod + arrow keys

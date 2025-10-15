@@ -126,7 +126,10 @@
       wlr-randr
       nh
       acpi
+      pwvucontrol
     ];
+
+    programs.kdeconnect.enable = false;
 
     ssh.enable = true;
     fonts.enable = true;
