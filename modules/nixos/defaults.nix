@@ -80,7 +80,7 @@
       isNormalUser = true;
       password = "qazxswedc";
       description = "Ethan Krall";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
       useDefaultShell = true;
     };
 
@@ -90,8 +90,6 @@
       enable = true;
       theme.enable = false;
     };
-
-    programs.firefox.enable = true;
 
     gaming.enable = true;
 
@@ -124,12 +122,23 @@
       feh
       kdePackages.ark
       wlr-randr
-      nh
       acpi
       pwvucontrol
+      power-profiles-daemon
+      libreoffice
     ];
 
+    programs.virt-manager.enable = true;
     programs.kdeconnect.enable = false;
+    programs.firefox.enable = true;
+
+    virtualisation.libvirtd = {
+      enable = true;
+      qemu = {
+        vhostUserPackages = with pkgs; [ virtiofsd ];
+        swtpm.enable = true;
+      };
+    };
 
     ssh.enable = true;
     fonts.enable = true;
@@ -138,11 +147,14 @@
 
     networking.wireless.iwd.enable = true;
 
-    nix.optimise.automatic = true;
-    nix.gc = {
-      automatic = true;
-      dates = "Mon *-*-* 04:30:00";
-      options = "--delete-older-than 30d";
+    programs.nh = {
+      enable = true;
+      flake = inputs.self.outPath;
+      clean = {
+        enable = true;
+        extraArgs = "--keep 5 --keep-since 7d --optimise";
+        dates = "04:00:00";
+      };
     };
 
     system.autoUpgrade = {
@@ -151,6 +163,11 @@
       allowReboot = true;
       flags = [ "--update-input" "nixpkgs" "--commit-lock-file" ];
       dates = "Mon *-*-* 04:00:00";
+    };
+
+    systemd.timers.nh-clean = {
+      after = [ "nixos-upgrade.timer" ];
+      timerConfig.WakeSystem = true;
     };
   };
 }
