@@ -103,8 +103,8 @@
       godot
       protonplus
       wget
-      chromium
-      aseprite
+      #chromium
+      #aseprite
       kdePackages.dolphin
       kdePackages.gwenview
       prismlauncher
@@ -149,7 +149,7 @@
 
     programs.nh = {
       enable = true;
-      flake = inputs.self.outPath;
+      flake = "/etc/nixos";
       clean = {
         enable = true;
         extraArgs = "--keep 5 --keep-since 7d --optimise";
@@ -166,7 +166,7 @@
     };
 
     systemd.timers.nh-clean = {
-      after = [ "nixos-upgrade.timer" ];
+      before = [ "nixos-upgrade.timer" ];
       timerConfig.WakeSystem = true;
     };
   };
