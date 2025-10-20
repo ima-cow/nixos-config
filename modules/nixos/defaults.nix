@@ -124,7 +124,6 @@
       wlr-randr
       acpi
       pwvucontrol
-      power-profiles-daemon
       libreoffice
     ];
 
@@ -144,6 +143,7 @@
     fonts.enable = true;
 
     services.playerctld.enable = true;
+    services.power-profiles-daemon.enable = true;
 
     networking.wireless.iwd.enable = true;
 
