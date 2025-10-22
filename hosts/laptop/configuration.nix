@@ -29,7 +29,7 @@
 
   services.fprintd.enable = true;
 
-  stylix-config.wallpaper = ../../other/wallpapers/wallpaper_2.jpg;
+  stylix-config.wallpaper = ../../other/wallpapers/wallpaper_3.jpg;
 
   system.stateVersion = "25.05";
 }
