@@ -125,6 +125,7 @@
       acpi
       pwvucontrol
       libreoffice
+      tor-browser
     ];
 
     programs.virt-manager.enable = true;
