@@ -88,7 +88,6 @@
 
     stylix-config = {
       enable = true;
-      theme.enable = false;
     };
 
     gaming.enable = true;
