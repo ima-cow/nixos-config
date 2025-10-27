@@ -102,7 +102,7 @@
       godot
       protonplus
       wget
-      #chromium
+      chromium
       #aseprite
       kdePackages.dolphin
       kdePackages.gwenview
