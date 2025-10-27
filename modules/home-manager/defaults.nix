@@ -57,7 +57,6 @@
     #
     home.sessionVariables = {
       # EDITOR = "emacs";
-      NH_FLAKE = "/etc/nixos";
     };
 
     services.easyeffects.enable = true;

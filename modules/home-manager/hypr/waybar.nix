@@ -54,7 +54,7 @@
             tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>";
           };
           "hyprland/window" = {
-            max-length = 50;
+            max-length = 40;
             separate-outputs = false;
           };
           "memory" = {
@@ -73,15 +73,15 @@
           };
           "network" = {
             format-icons = [
-              "󰤯"
-              "󰤟"
-              "󰤢"
-              "󰤥"
-              "󰤨"
+              "󰤯 "
+              "󰤟 "
+              "󰤢 "
+              "󰤥 "
+              "󰤨 "
             ];
             format-ethernet = " {bandwidthDownOctets}";
-            format-wifi = "{icon}   {signalStrength}%";
-            format-disconnected = "󰤮";
+            format-wifi = "{icon} {essid} {signalStrength}%";
+            format-disconnected = "󰤮 ";
             tooltip = false;
           };
           "tray" = {
@@ -93,18 +93,18 @@
             format-bluetooth-muted = " {icon} {format_source}";
             format-muted = " {format_source}";
             format-source = " {volume}%";
-            format-source-muted = "";
+            format-source-muted = " ";
             format-icons = {
-              headphone = "";
-              hands-free = "";
-              headset = "";
-              phone = "";
-              portable = "";
-              car = "";
+              headphone = " ";
+              hands-free = " ";
+              headset = " ";
+              phone = " ";
+              portable = " ";
+              car = " ";
               default = [
                 ""
-                ""
-                ""
+                " "
+                " "
               ];
             };
             on-click = "sleep 0.1 && pwvucontrol";
@@ -116,14 +116,14 @@
           };
           "custom/startmenu" = {
             tooltip = false;
-            format = "";
+            format = "   ";
             on-click = "sleep 0.1 && pidof wofi || wofi --show drun";
           };
           "idle_inhibitor" = {
             format = "{icon}";
             format-icons = {
-              activated = "";
-              deactivated = "";
+              activated = " ";
+              deactivated = " ";
             };
             tooltip = "true";
           };
@@ -131,14 +131,14 @@
             tooltip = false;
             format = "{icon} {}";
             format-icons = {
-              notification = "";
-              none = "";
-              dnd-notification = "";
-              dnd-none = "";
-              inhibited-notification = "";
-              inhibited-none = "";
-              dnd-inhibited-notification = "";
-              dnd-inhibited-none = "";
+              notification = " ";
+              none = " ";
+              dnd-notification = " ";
+              dnd-none = " ";
+              inhibited-notification = " ";
+              inhibited-none = " ";
+              dnd-inhibited-notification = " ";
+              dnd-inhibited-none = " ";
             }; 
             return-type = "json";
             exec-if = "which swaync-client";
@@ -152,8 +152,8 @@
               critical = 15;
             };
             format = "{icon} {capacity}%";
-            format-charging = "󰂄 {capacity}%";
-            format-plugged = "󱘖 {capacity}%";
+            format-charging = "󰂄  {capacity}%";
+            format-plugged = "󱘖  {capacity}%";
             format-icons = [
               "󰁺"
               "󰁻"
@@ -166,8 +166,7 @@
               "󰂂"
               "󰁹"
             ];
-            on-click = "";
-            tooltip = false;
+            tooltip = true;
           };
           "custom/arrow1" = {
             format = "";
@@ -192,7 +191,7 @@
           };
         }
       ];
-      style = lib.concatStrings [
+      style = lib.mkAfter
         ''
           * {
             font-family: JetBrainsMono Nerd Font Mono;
@@ -233,10 +232,10 @@
             color: #${config.lib.stylix.colors.base00};
           }i
           #custom-startmenu {
-            color: #${config.lib.stylix.colors.base02};
+            color: #${config.lib.stylix.colors.base04};
             padding: 0px 14px;
             font-size: 20px;
-            background: #${config.lib.stylix.colors.base0B};
+            background: #${config.lib.stylix.colors.base04};
           }
           #custom-hyprbindings, #network, #battery,
           #custom-notification, #custom-exit {
@@ -285,8 +284,7 @@
             color: #${config.lib.stylix.colors.base04};
             background: transparent;
           }
-        ''
-      ];
+        '';
     };
   };
 }

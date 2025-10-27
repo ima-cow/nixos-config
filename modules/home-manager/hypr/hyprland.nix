@@ -40,7 +40,7 @@ in
         ################
   
         # See https://wiki.hypr.land/Configuring/Monitors/
-        monitor = ",2560x1440@144.000000Hz,auto,${cfg.scale}";
+        monitor = ",highres,auto,${cfg.scale}";
   
         xwayland = {
           force_zero_scaling = true;
