@@ -28,14 +28,14 @@ in
         general = {
           lock_cmd = "pidof hyprlock || hyprlock";
           before_sleep_cmd = "loginctl lock-session";
-          after_sleep_cmd = "hyprctl dispatch dpms on && ${cfg.brightness-restore}";
+          after_sleep_cmd = "hyprctl dispatch dpms on && brightnessctl -r";
         };
 
         listener = [
           {
             timeout = 150;
-            on-timeout = cfg.brightness-down;
-            on-resume = cfg.brightness-restore;
+            on-timeout = "brightnessctl -s set 10%";
+            on-resume = "brightnessctl -r";
           }
           {
             timeout = 300;

@@ -19,8 +19,6 @@
   };
 
   hypridle = {
-    brightness-down = "";
-    brightness-restore = "";
     timeout-off = "";
   };
 

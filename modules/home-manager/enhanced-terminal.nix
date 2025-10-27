@@ -32,7 +32,7 @@ in
         "$schema" = "https://starship.rs/config-schema.json";
         
         format = lib.concatStrings [
-          "[](red)"
+          "[ ](red)"
           "$os"
           "$username"
           "[](bg:orange fg:red)"
@@ -64,25 +64,25 @@ in
           disabled = false;
           style = "bg:red fg:bright-white";
           symbols = {
-            Windows = "";
-            Ubuntu = "󰕈";
-            SUSE = "";
-            Raspbian = "󰐿";
-            Mint = "󰣭";
-            Macos = "󰀵";
-            Manjaro = "";
-            Linux = "󰌽";
-            Gentoo = "󰣨";
-            Fedora = "󰣛";
-            Alpine = "";
-            Amazon = "";
+            Windows = " ";
+            Ubuntu = "󰕈 ";
+            SUSE = " ";
+            Raspbian = "󰐿 ";
+            Mint = "󰣭 ";
+            Macos = "󰀵 ";
+            Manjaro = " ";
+            Linux = "󰌽 ";
+            Gentoo = "󰣨 ";
+            Fedora = "󰣛 ";
+            Alpine = " ";
+            Amazon = " ";
             Android = "";
-            Arch = "󰣇";
-            Artix = "󰣇";
-            CentOS = "";
-            Debian = "󰣚";
-            Redhat = "󱄛";
-            RedHatEnterprise = "󱄛";
+            Arch = "󰣇 ";
+            Artix = "󰣇 ";
+            CentOS = " ";
+            Debian = "󰣚 ";
+            Redhat = "󱄛 ";
+            RedHatEnterprise = "󱄛 ";
             NixOS = " ";
           };
         };
