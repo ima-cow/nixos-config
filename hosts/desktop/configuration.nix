@@ -34,6 +34,11 @@
     backupFileExtension = "backup";
   };
 
+  environment.systemPackages = with pkgs; [
+    lsfg-vk
+    lsfg-vk-ui
+  ];
+
   stylix-config.wallpaper = ../../other/wallpapers/wallpaper_1.jpg;
    
   # DO NOT CHANGE
