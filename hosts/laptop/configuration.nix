@@ -30,8 +30,11 @@
   services.fprintd.enable = true;
 
   stylix-config = {
-    wallpaper = ../../other/wallpapers/wallpaper_6.jpg;
-    theme.enable = false;
+    wallpaper = ../../other/wallpapers/wallpaper_8.jpg;
+    theme = {
+      enable = false;
+      scheme = "gruvbox-dark";
+    };
   };
 
   system.stateVersion = "25.05";
