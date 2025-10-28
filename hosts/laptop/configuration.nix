@@ -30,7 +30,7 @@
   services.fprintd.enable = true;
 
   stylix-config = {
-    wallpaper = ../../other/wallpapers/wallpaper_4.jpg;
+    wallpaper = ../../other/wallpapers/wallpaper_6.jpg;
     theme.enable = false;
   };
 

@@ -166,8 +166,9 @@
     };
 
     systemd.timers.nh-clean = {
-      before = [ "nixos-upgrade.timer" ];
+      after = [ "nixos-upgrade.timer" ];
       timerConfig.WakeSystem = true;
+      onSuccess = [ "suspend.target" ];
     };
   };
 }
