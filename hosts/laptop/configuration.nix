@@ -30,10 +30,10 @@
   services.fprintd.enable = true;
 
   stylix-config = {
-    wallpaper = ../../other/wallpapers/wallpaper_10.jpg;
+    wallpaper = ../../other/wallpapers/wallpaper_11.jpg;
     theme = {
       enable = false;
-      scheme = "gruvbox-dark";
+      scheme = "catppuccin-mocha";
     };
   };
 
