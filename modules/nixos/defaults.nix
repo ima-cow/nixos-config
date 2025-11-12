@@ -125,6 +125,8 @@
       pwvucontrol
       libreoffice
       tor-browser
+      jetbrains.idea-community
+      fastfetch
     ];
 
     programs.virt-manager.enable = true;

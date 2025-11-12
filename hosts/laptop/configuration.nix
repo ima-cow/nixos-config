@@ -30,7 +30,7 @@
   services.fprintd.enable = true;
 
   stylix-config = {
-    wallpaper = ../../other/wallpapers/wallpaper_11.jpg;
+    wallpaper = ../../other/wallpapers/wallpaper_2.jpg;
     theme = {
       enable = false;
       scheme = "catppuccin-mocha";
