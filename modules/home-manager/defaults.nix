@@ -23,6 +23,13 @@
     hyprlock.enable = true;
     hypridle.enable = true;
     waybar.enable = true;
+
+    programs.tmux = {
+      enable = true;
+      mouse = true;
+      keyMode = "vi";
+      shell = "${pkgs.fish}/bin/fish";
+    };
  
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
     # plain files is through 'home.file'.

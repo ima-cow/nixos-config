@@ -30,8 +30,11 @@
   services.fprintd.enable = true;
 
   stylix-config = {
-    wallpaper = ../../other/wallpapers/wallpaper_4.jpg;
-    theme.enable = false;
+    wallpaper = ../../other/wallpapers/wallpaper_2.jpg;
+    theme = {
+      enable = false;
+      scheme = "catppuccin-mocha";
+    };
   };
 
   system.stateVersion = "25.05";

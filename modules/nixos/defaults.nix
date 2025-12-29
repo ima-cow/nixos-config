@@ -17,9 +17,8 @@
     services.displayManager = {
       sddm = {
         enable = true;
-        #autoNumlock = true;
-        #autoLogin.relogin = true;
-        wayland.enable = true;
+        autoNumlock = true;
+        autoLogin.relogin = false;
       };
 
       autoLogin = {
@@ -88,7 +87,7 @@
     fish.enable = true;
 
     stylix-config = {
-      enable = true;
+     enable = true;
     };
 
     gaming.enable = true;
@@ -134,7 +133,17 @@
       zed-editor
       zig
       odin
+      jetbrains.idea-community
+      jetbrains.clion
+      fastfetch
+      go
     ];
+
+    programs.nix-ld.enable = true;
+      programs.nix-ld.libraries = [
+        pkgs.stdenv.cc.cc
+        #pkgs.stdenv.cc.cc.lib
+     ];
 
     programs.virt-manager.enable = true;
     programs.kdeconnect.enable = false;
@@ -320,8 +329,9 @@
     };
 
     systemd.timers.nh-clean = {
-      before = [ "nixos-upgrade.timer" ];
+      after = [ "nixos-upgrade.timer" ];
       timerConfig.WakeSystem = true;
+      onSuccess = [ "suspend.target" ];
     };
   };
 }
