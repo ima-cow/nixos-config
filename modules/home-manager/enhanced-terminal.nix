@@ -21,7 +21,12 @@ in
       enableFishIntegration = true;
       settings = { 
         font-family = cfg.font;
+         keybind = [
+         "ctrl+shift+d=new_split:down"
+         "ctrl+shift+e=new_split:right"
+        ];
       };
+      installVimSyntax = true;
     };
 
     programs.starship = {
