@@ -221,7 +221,7 @@ in
         # https://wiki.hypr.land/Configuring/Variables/#input
         input = {
           kb_layout = "us";
-          kb_variant = "intl";
+          kb_variant = "";
           kb_model = "";
           kb_options = "";
           kb_rules = "";

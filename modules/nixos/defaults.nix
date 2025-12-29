@@ -18,7 +18,7 @@
       sddm = {
         enable = true;
         autoNumlock = true;
-        autoLogin.relogin = true;
+        autoLogin.relogin = false;
       };
 
       autoLogin = {
@@ -59,7 +59,7 @@
     programs.hyprland = {
       enable = true;
       withUWSM  = false;
-      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+      package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
     };
 
     services.printing.enable = true;
@@ -87,7 +87,7 @@
     fish.enable = true;
 
     stylix-config = {
-      enable = true;
+     enable = true;
     };
 
     gaming.enable = true;
@@ -103,7 +103,7 @@
       protonplus
       wget
       chromium
-      #aseprite
+      aseprite
       kdePackages.dolphin
       kdePackages.gwenview
       prismlauncher
@@ -126,8 +126,18 @@
       libreoffice
       tor-browser
       jetbrains.idea-community
+      jetbrains.clion
       fastfetch
+      itch
+      zig
+      go
     ];
+
+    programs.nix-ld.enable = true;
+      programs.nix-ld.libraries = [
+        pkgs.stdenv.cc.cc
+        #pkgs.stdenv.cc.cc.lib
+     ];
 
     programs.virt-manager.enable = true;
     programs.kdeconnect.enable = false;
