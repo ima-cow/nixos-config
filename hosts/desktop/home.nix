@@ -18,11 +18,6 @@
     session-wide = false;
   };
 
-  hypridle = {
-    timeout-off = "";
-  };
-
-
   home.stateVersion = "25.05"; # DO NOT CHANGE
   programs.home-manager.enable = true;
 }
