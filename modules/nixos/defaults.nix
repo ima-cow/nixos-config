@@ -143,6 +143,7 @@
       jetbrains.clion
       fastfetch
       go
+      dotnetCorePackages.sdk_9_0_1xx-bin
     ];
 
 
