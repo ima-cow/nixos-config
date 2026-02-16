@@ -137,13 +137,8 @@
       jetbrains.clion
       fastfetch
       go
+      dotnetCorePackages.sdk_9_0_1xx-bin
     ];
-
-    programs.nix-ld.enable = true;
-      programs.nix-ld.libraries = [
-        pkgs.stdenv.cc.cc
-        #pkgs.stdenv.cc.cc.lib
-     ];
 
     programs.virt-manager.enable = true;
     programs.kdeconnect.enable = false;
