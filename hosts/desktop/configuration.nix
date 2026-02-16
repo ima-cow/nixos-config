@@ -21,6 +21,22 @@
 
   nvidia-drivers.enable = true;
 
+  #  boot.initrd.kernelModules = [
+  # "vfio_pci"
+  # "vfio"
+  # "vfio_iommu_type1"
+
+  # "nvidia"
+  # "nvidia_modeset"
+  # "nvidia_uvm"
+  # "nvidia_drm"
+  #];
+
+  boot.kernelParams = [
+    "intel_iommu=on"
+    "vfio-pci.ids=10de:2489,10de:228b"
+  ];
+
   services.logind.settings.Login = {
     HandlePowerKey = "suspend";
     HandlePowerKeyLongPress = "poweroff";

@@ -7,7 +7,7 @@
     = lib.mkEnableOption "enable user module";
 
   config = lib.mkIf config.nixos-defaults.enable {
-    boot.kernelPackages = pkgs.linuxPackages_latest;
+    boot.kernelPackages = pkgs.linuxPackages_6_18;
 
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -15,19 +15,26 @@
     hardware.i2c.enable = true;
 
     services.displayManager = {
+      enable = true;
       sddm = {
         enable = true;
         autoNumlock = true;
         autoLogin.relogin = false;
+        wayland.enable = true;
       };
 
       autoLogin = {
-        enable = true;
-        user = "ethank";
+       enable = true;
+       user = "ethank";
       };
 
-      defaultSession = "hyprland";
+      defaultSession = "hyprland-uwsm";
     };
+
+    xdg.portal = {
+      enable = true;
+    };
+
 
     nix.settings.experimental-features = [ "nix-command" "flakes"];
 
@@ -58,7 +65,7 @@
 
     programs.hyprland = {
       enable = true;
-      withUWSM  = false;
+      withUWSM  = true;
       package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
     };
 
@@ -126,19 +133,19 @@
       tor-browser
       hunspellDicts.en-us
       helvum
-      jetbrains.idea-community-bin
+      jetbrains.idea-oss
       #logisim-evolution
       chromium
       itch
       zed-editor
       zig
       odin
-      jetbrains.idea-community
       jetbrains.clion
       fastfetch
       go
       dotnetCorePackages.sdk_9_0_1xx-bin
     ];
+
 
     programs.virt-manager.enable = true;
     programs.kdeconnect.enable = false;
@@ -289,6 +296,7 @@
     ];
   };  
 
+    virtualisation.spiceUSBRedirection.enable = true;
     virtualisation.libvirtd = {
       enable = true;
       qemu = {
@@ -302,8 +310,6 @@
 
     services.playerctld.enable = true;
     services.power-profiles-daemon.enable = true;
-
-    networking.wireless.iwd.enable = true;
 
     programs.nh = {
       enable = true;
