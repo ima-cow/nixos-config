@@ -335,20 +335,14 @@ in
   
         # See https://wiki.hypr.land/Configuring/Window-Rules/ for more
         # See https://wiki.hypr.land/Configuring/Workspace-Rules/ for workspace rules
-  
+
         windowrule = [
-          # Example windowrule
-          # "float,class:^(kitty)$,title:^(kitty)$"
-  
-          # Ignore maximize requests from apps. You'll probably like this.
-          "suppressevent maximize, class:.*"
-  
-          "tile, class:^(Godot)$"
-          "tile, class:^(Fighting Game Adv Comp Sci)$"
-          "fullscreen, class:Minecraft.*"
-  
-          # Fix some dragging issues with XWayland
-          "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+          # Ignore maximize requests from apps
+          "suppress_event maximize, match:class .*"
+          "tile on, match:class ^(Godot)$"
+          "tile on, match:class ^(Fighting Game Adv Comp Sci)$"
+          "fullscreen on, match:class Minecraft.*"
+          "no_focus on, match:class ^$, match:title ^$, match:xwayland 2, match:float 1, match:fullscreen 0, match:pin 0"
         ];
       };
     };
