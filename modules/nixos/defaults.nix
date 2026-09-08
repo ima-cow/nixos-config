@@ -35,12 +35,14 @@
       enable = true;
     };
 
+    networking.wireless.iwd.enable = false;
+    networking.wireless.enable = true;
 
     nix.settings.experimental-features = [ "nix-command" "flakes"];
 
     networking.networkmanager.enable = true;
 
-    time.timeZone = "America/New_York";
+    time.timeZone = "America/Chicago";
 
     i18n.defaultLocale = "en_US.UTF-8";
 
@@ -66,7 +68,7 @@
     programs.hyprland = {
       enable = true;
       withUWSM  = true;
-      package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
+      #package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
     };
 
     services.printing.enable = true;
