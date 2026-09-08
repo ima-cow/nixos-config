@@ -7,7 +7,7 @@
     = lib.mkEnableOption "enable user module";
 
   config = lib.mkIf config.nixos-defaults.enable {
-    boot.kernelPackages = pkgs.linuxPackages_6_18;
+    boot.kernelPackages = pkgs.linuxPackages_latest;
 
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -107,11 +107,9 @@
 
     environment.systemPackages = with pkgs; [
       vim
-      #spotify
+      spotify
       godot
-      protonplus
       wget
-      #aseprite
       kdePackages.dolphin
       kdePackages.gwenview
       prismlauncher
@@ -124,9 +122,7 @@
       hyprshot
       ddcutil
       bluetui
-      #impala
       brightnessctl
-      feh
       kdePackages.ark
       wlr-randr
       acpi
@@ -134,20 +130,11 @@
       libreoffice
       tor-browser
       hunspellDicts.en-us
-      # helvum
-      jetbrains.idea-oss
-      #logisim-evolution
       chromium
       itch
       zed-editor
       zig
-      odin
-      jetbrains.clion
       fastfetch
-      go
-      dotnetCorePackages.sdk_9_0_1xx-bin
-      python3
-      gphoto2
     ];
 
 
@@ -190,6 +177,7 @@
       xorg.libxshmfence
       xorg.libXxf86vm
       libelf
+       
 
       # Required
       glib
@@ -215,7 +203,6 @@
       xorg.libXi
       xorg.libSM
       xorg.libICE
-      gnome2.GConf
       nspr
       nss
       cups
@@ -267,9 +254,9 @@
       SDL_mixer
       SDL2_ttf
       SDL2_mixer
-      libappindicator-gtk2
-      libdbusmenu-gtk2
-      libindicator-gtk2
+      libappindicator-gtk3
+      libdbusmenu-gtk3
+      libindicator-gtk3
       libcaca
       libcanberra
       libgcrypt

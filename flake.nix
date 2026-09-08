@@ -28,7 +28,6 @@
       inputs.home-manager.nixosModules.default
       inputs.nvf.nixosModules.default
       inputs.stylix.nixosModules.stylix
-      inputs.niri.nixosModules.niri
     ];
   in {
     nixosConfigurations = {
