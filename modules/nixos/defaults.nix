@@ -35,12 +35,14 @@
       enable = true;
     };
 
+    networking.wireless.iwd.enable = false;
+    networking.wireless.enable = true;
 
     nix.settings.experimental-features = [ "nix-command" "flakes"];
 
     networking.networkmanager.enable = true;
 
-    time.timeZone = "America/New_York";
+    time.timeZone = "America/Chicago";
 
     i18n.defaultLocale = "en_US.UTF-8";
 
@@ -66,7 +68,7 @@
     programs.hyprland = {
       enable = true;
       withUWSM  = true;
-      package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
+      #package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
     };
 
     services.printing.enable = true;
@@ -105,7 +107,7 @@
 
     environment.systemPackages = with pkgs; [
       vim
-      spotify
+      #spotify
       godot
       protonplus
       wget
@@ -132,7 +134,7 @@
       libreoffice
       tor-browser
       hunspellDicts.en-us
-      helvum
+      # helvum
       jetbrains.idea-oss
       #logisim-evolution
       chromium
@@ -144,6 +146,8 @@
       fastfetch
       go
       dotnetCorePackages.sdk_9_0_1xx-bin
+      python3
+      gphoto2
     ];
 
 
@@ -322,7 +326,7 @@
     };
 
     system.autoUpgrade = {
-      enable = true;
+      enable = false;
       flake = inputs.self.outPath;
       allowReboot = true;
       flags = [ "--update-input" "nixpkgs" "--commit-lock-file" ];
@@ -330,7 +334,6 @@
     };
 
     systemd.timers.nh-clean = {
-      after = [ "nixos-upgrade.timer" ];
       timerConfig.WakeSystem = true;
       onSuccess = [ "suspend.target" ];
     };
