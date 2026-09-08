@@ -32,10 +32,10 @@
   # "nvidia_drm"
   #];
 
-  boot.kernelParams = [
-    "intel_iommu=on"
-    "vfio-pci.ids=10de:2489,10de:228b"
-  ];
+  #boot.kernelParams = [
+  #  "intel_iommu=on"
+  #  "vfio-pci.ids=10de:2489,10de:228b"
+  #];
 
   services.logind.settings.Login = {
     HandlePowerKey = "suspend";
@@ -50,10 +50,10 @@
     backupFileExtension = "backup";
   };
 
-  environment.systemPackages = with pkgs; [
-    lsfg-vk
-    lsfg-vk-ui
-  ];
+  #environment.systemPackages = with pkgs; [
+  #  lsfg-vk
+  #  lsfg-vk-ui
+  # ];
 
   stylix-config.wallpaper = ../../other/wallpapers/wallpaper_1.jpg;
    
