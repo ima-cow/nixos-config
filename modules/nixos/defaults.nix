@@ -40,7 +40,8 @@
 
     nix.settings.experimental-features = [ "nix-command" "flakes"];
 
-    networking.networkmanager.enable = true;
+    networking.networkmanager.enable = false;
+    networking.wireless.userControlled = true;
 
     time.timeZone = "America/Los_Angeles";
 
@@ -143,7 +144,7 @@
     programs.firefox.enable = true;
     #programs.chromium.enable = true;
 
-    nix-lid.enable = true;
+    nix-ld.enable = true;
 
     virtualisation.spiceUSBRedirection.enable = true;
     virtualisation.libvirtd = {

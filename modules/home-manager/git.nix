@@ -24,8 +24,6 @@ in
   config = lib.mkIf cfg.enable  {
     programs.git = {
       enable = true;
-      userName = cfg.userName;
-      userEmail = cfg.userEmail;
 
       signing = {
         format = "ssh";
@@ -33,7 +31,11 @@ in
         key = cfg.key;
        };
 
-      extraConfig = {
+      settings = {
+        user = {
+          name = cfg.userName;
+          email = cfg.userEmail;
+        };
         init.defaultBranch = "main";
         safe.directory = "/etc/nixos";
         advice.defaultBranchName = "false";

@@ -13,10 +13,21 @@
 
   networking.hostName = "laptop";
 
+   networking.wireless.networks.eduroam = {
+   auth = ''
+     key_mgmt=WPA-EAP
+     eap=PWD
+     identity="eikrall@ucsc.edu"
+     password="PORT@santa26"
+   '';
+ };
+
+  security.pki.certificateFiles = [ "/etc/nixos/other/ca.crt" ];
+
   services.logind.settings.Login = {
     HandlePowerKey = "hibernate";
     HandlePowerKeyLongPress = "poweroff";
-    HandleLidSwitch = "suspend";
+    HandleLidSwitch = "suspend-then-hibernate";
   };
 
   home-manager = {
