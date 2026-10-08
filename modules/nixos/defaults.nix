@@ -40,8 +40,8 @@
 
     nix.settings.experimental-features = [ "nix-command" "flakes"];
 
-    networking.networkmanager.enable = false;
-    networking.wireless.userControlled = true;
+    networking.networkmanager.enable = true;
+    networking.wireless.userControlled = false;
 
     time.timeZone = "America/Los_Angeles";
 
